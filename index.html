@@ -136,7 +136,6 @@
       font-size: 0.95rem;
       color: #e0e0e0;
     }
-
   </style>
 </head>
 
@@ -147,8 +146,8 @@
 
   <!-- Info -->
   <p class="footer-text">
-    Snaplets are modular, hosted components that can be embedded anywhere via JSON configuration. 
-    Developers can build new Snaplets, and business owners can integrate them without coding. 
+    Snaplets are modular, hosted components that can be embedded anywhere via JSON configuration.
+    Developers can build new Snaplets, and business owners can integrate them without coding.
     This demo page demonstrates multiple Snaplets stacked in a modern, clean, commercial-style layout.
   </p>
 
@@ -223,10 +222,29 @@
         }
       </script>
     </snap-let>
+
+
+    <snap-let>
+      <script type="application/json">
+        {
+          "name":"contact-form",
+          "entry":"https://codearchiste.github.io/snaplet/form/script.js",
+          "css":"https://codearchiste.github.io/snaplet/form/style.css",
+          "fields":[
+            {"label":"Name","type":"text","name":"name"},
+            {"label":"Email","type":"email","name":"email"},
+            {"label":"Message","type":"textarea","name":"message"}
+          ],
+          "submitText":"Send Message",
+          "endpoint":"https://example.com/form-submit"
+        }
+      </script>
+    </snap-let>
+
   </div>
 
 
-    <!-- Footer -->
+  <!-- Footer -->
   <footer>
     <h3>Contact & Links</h3>
     <p>
