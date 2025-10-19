@@ -3,13 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Snaplet Developer Demo</title>
+  <title>Snaplet Live Demo</title>
   <script type="module" src="https://codearchiste.github.io/snaplet/snaplet-loader.js"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
-    /* Reset and base styles */
+    /* General reset */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -18,103 +16,146 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f4f6f8;
+      background: linear-gradient(to bottom, #f0f4f8, #ffffff);
       color: #333;
-      line-height: 1.5;
+      padding: 20px;
     }
 
     h1 {
       text-align: center;
-      font-weight: 600;
-      margin: 40px 0 20px;
-      color: #111;
+      margin-bottom: 50px;
+      font-size: 2.8rem;
+      color: #1f2937;
     }
 
-    /* Snaplet grid */
     .demo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
-      padding: 0 20px 50px;
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    /* Snaplet card styles */
     snap-let {
       display: block;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     snap-let:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
     }
 
-    /* Snaplet shadow DOM inner container styling */
-    snap-let::part(container) {
-      padding: 16px;
+    /* Snaplet error display */
+    .snaplet-error {
+      border: 1px solid #e74c3c;
+      padding: 15px;
+      background-color: #fdecea;
+      color: #c0392b;
+      border-radius: 8px;
+      font-weight: bold;
     }
 
-    /* Snaplet headers for developer info */
-    .snaplet-header {
-      font-size: 0.9rem;
-      font-weight: 600;
+    /* Section Titles */
+    .section-title {
+      text-align: center;
+      margin: 60px 0 25px;
+      font-size: 2rem;
+      color: #0f4c81;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #0f4c81;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Footer */
+    .footer-text {
+      text-align: center;
+      max-width: 700px;
+      margin: 50px auto 0;
       color: #555;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      line-height: 1.6;
+      font-size: 1rem;
     }
 
-    /* Code-style info panel */
-    .snaplet-meta {
-      font-family: monospace;
-      font-size: 0.85rem;
-      background: #f0f0f0;
-      padding: 6px 10px;
-      border-radius: 4px;
-      margin-bottom: 10px;
-      overflow-x: auto;
-      color: #333;
-    }
-
-    /* Buttons inside snaplets */
+    /* Button styles inside Snaplets (if CSS not applied) */
     snap-let button {
-      background-color: #0077ff;
+      padding: 8px 16px;
+      font-size: 1rem;
+      background-color: #0f4c81;
       color: #fff;
       border: none;
-      padding: 8px 14px;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
-      font-weight: 500;
-      transition: background 0.2s ease;
+      transition: background-color 0.2s;
     }
 
     snap-let button:hover {
-      background-color: #005fcc;
+      background-color: #1e6bb8;
     }
 
-    /* Responsive tweaks */
-    @media (max-width: 768px) {
-      .demo-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
+
+    /* Footer */
+    footer {
+      background-color: #0f4c81;
+      color: #fff;
+      padding: 40px 20px;
+      margin-top: 80px;
+      text-align: center;
     }
+
+    footer h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    footer a {
+      color: #42e695;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: #ff6ec4;
+    }
+
+    footer p {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: #e0e0e0;
+    }
+
   </style>
 </head>
 
 <body>
-  <h1>Snaplet Developer Demo</h1>
 
+  <h1>Snaplet Live Demo</h1>
+
+
+  <!-- Info -->
+  <p class="footer-text">
+    Snaplets are modular, hosted components that can be embedded anywhere via JSON configuration. 
+    Developers can build new Snaplets, and business owners can integrate them without coding. 
+    This demo page demonstrates multiple Snaplets stacked in a modern, clean, commercial-style layout.
+  </p>
+
+
+  <!-- Developers Section -->
+  <div class="section-title">For Developers</div>
   <div class="demo-grid">
-
-    <!-- Counter Snaplet -->
     <snap-let>
       <script type="application/json">
         {
@@ -127,7 +168,6 @@
       </script>
     </snap-let>
 
-    <!-- Product Grid Snaplet -->
     <snap-let>
       <script type="application/json">
         {
@@ -144,8 +184,11 @@
         }
       </script>
     </snap-let>
+  </div>
 
-    <!-- Data Table Snaplet -->
+  <!-- Business Section -->
+  <div class="section-title">For Business & Product Owners</div>
+  <div class="demo-grid">
     <snap-let>
       <script type="application/json">
         {
@@ -160,7 +203,6 @@
       </script>
     </snap-let>
 
-    <!-- Countdown Snaplet -->
     <snap-let>
       <script type="application/json">
         {
@@ -172,7 +214,6 @@
       </script>
     </snap-let>
 
-    <!-- Color Box Snaplet -->
     <snap-let>
       <script type="application/json">
         {
@@ -182,8 +223,20 @@
         }
       </script>
     </snap-let>
-
   </div>
+
+
+    <!-- Footer -->
+  <footer>
+    <h3>Contact & Links</h3>
+    <p>
+      <a href="mailto:contact@codearchiste.github.io">Email Us</a> |
+      <a href="https://github.com/codearchiste" target="_blank">GitHub</a> |
+      <a href="https://codearchiste.github.io/snaplet/docs" target="_blank">Documentation</a>
+    </p>
+    <p>&copy; 2025 Snaplet by CodeArchiste. All rights reserved.</p>
+  </footer>
+
 
 </body>
 
