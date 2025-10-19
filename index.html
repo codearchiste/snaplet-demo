@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Snaplet Demo UI</title>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://snaplet-web.github.io; style-src 'self' 'unsafe-inline';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://codearchie.github.io; style-src 'self' 'unsafe-inline';">
 <style>
 body { font-family: sans-serif; background: #f9f9f9; margin: 0; padding: 20px; }
 h1 { text-align: center; margin-bottom: 30px; }
@@ -30,14 +30,16 @@ snap-let { display: block; border: 1px solid #ddd; background: #fff; padding: 15
 <snap-let>
 <script type="application/json">
 {
-  "name":"product-grid",
-  "entry":"https://codearchiste.github.io/snaplet/product-grid/script.js",
-  "products":[
+  "name": "product-grid",
+  "entry": "https://codearchie.github.io/snaplet/product-grid/script.js",
+  "css": "https://codearchie.github.io/snaplet/product-grid/style.css",
+  "html": "https://codearchie.github.io/snaplet/product-grid/template.html",
+  "products": [
     {"name":"Widget A","price":19.99,"image":"https://picsum.photos/200?1"},
     {"name":"Widget B","price":29.99,"image":"https://picsum.photos/200?2"},
     {"name":"Widget C","price":9.99,"image":"https://picsum.photos/200?3"}
   ],
-  "buttonText":"Add to Cart"
+  "buttonText": "Add to Cart"
 }
 </script>
 </snap-let>
