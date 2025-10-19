@@ -23,17 +23,23 @@
 
     h1 {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       font-size: 2.8rem;
       color: #1f2937;
     }
 
+    /* Mosaic grid */
     .demo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
       max-width: 1200px;
       margin: 0 auto;
+    }
+
+    /* Larger Snaplets span 2 columns on wider screens */
+    .span-2 {
+      grid-column: span 2;
     }
 
     snap-let {
@@ -79,17 +85,16 @@
       border-radius: 2px;
     }
 
-
     .header-text {
       text-align: center;
       max-width: 700px;
-      margin: 50px auto 0;
+      margin: 30px auto 60px;
       color: #555;
       line-height: 1.6;
       font-size: 1rem;
     }
 
-    /* Button styles inside Snaplets (if CSS not applied) */
+    /* Buttons inside Snaplets */
     snap-let button {
       padding: 8px 16px;
       font-size: 1rem;
@@ -104,7 +109,6 @@
     snap-let button:hover {
       background-color: #1e6bb8;
     }
-
 
     /* Footer */
     footer {
@@ -143,19 +147,17 @@
 
   <h1>Snaplet Live Demo</h1>
 
-
   <!-- Info -->
   <p class="header-text">
-    Snaplets are modular, Self or Cloud hosted components that can be embedded anywhere via JSON configuration.
+    Snaplets are modular, self or cloud hosted components that can be embedded anywhere via JSON configuration.
     Developers can build new Snaplets, and business owners can integrate them without coding.
-    This demo page demonstrates multiple Snaplets in a stacked layout.
+    This demo page demonstrates multiple Snaplets in a modern, mosaic-style layout.
   </p>
-
 
   <!-- Developers Section -->
   <div class="section-title">For Developers</div>
   <div class="demo-grid">
-    <snap-let>
+    <snap-let class="span-2">
       <script type="application/json">
         {
           "name":"counter",
@@ -175,39 +177,13 @@
           "css": "https://codearchiste.github.io/snaplet/product-grid/style.css",
           "html": "https://codearchiste.github.io/snaplet/product-grid/template.html",
           "products": [
-            {"name":"Widget A","price":19.99,"image":"https://picsum.photos/200?1"},
-            {"name":"Widget B","price":29.99,"image":"https://picsum.photos/200?2"},
-            {"name":"Widget C","price":9.99,"image":"https://picsum.photos/200?3"}
+            {"name":"Custom Product 1","price":15.00,"image":"https://picsum.photos/200?10"},
+            {"name":"Custom Product 2","price":25.00,"image":"https://picsum.photos/200?11"}
           ],
           "buttonText": "Add to Cart"
         }
       </script>
     </snap-let>
-
-
-<!--
-    <snap-let>
-      <script type="application/json">
-        {
-          "name": "debug-error",
-          "entry": "https://codearchiste.github.io/snaplet/debug-error/script.js",
-          "triggerError": "runtime"
-        }
-      </script>
-    </snap-let>
-
-
-
-    <snap-let>
-      <script type="application/json">
-      {
-        "name": "debug-error",
-        "entry": "https://codearchiste.github.io/snaplet/debug-error/script.js"
-      }
-    </script>
-    </snap-let>
-
-  -->
   </div>
 
   <!-- Business Section -->
@@ -248,8 +224,7 @@
       </script>
     </snap-let>
 
-
-    <snap-let>
+    <snap-let class="span-2">
       <script type="application/json">
         {
           "name":"contact-form",
@@ -265,9 +240,7 @@
         }
       </script>
     </snap-let>
-
   </div>
-
 
   <!-- Footer -->
   <footer>
@@ -279,7 +252,6 @@
     </p>
     <p>&copy; 2025 Snaplet by CodeArchiste. All rights reserved.</p>
   </footer>
-
 
 </body>
 
