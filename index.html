@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snaplet Demo</title>
+  <script type="module" src="https://snaplet-engine.pages.dev/snaplet-loader.js?v=3"></script>
+</head>
+<body>
+  <h1>Snaplet Product Grid Demo</h1>
+
+  <snap-let data-config='{
+    "name": "product-grid",
+    "entry": "https://snaplet-engine.pages.dev/components/product-grid/script.js?v=3",
+    "css": "https://snaplet-engine.pages.dev/components/product-grid/style.css?v=3",
+    "html": "https://snaplet-engine.pages.dev/components/product-grid/template.html?v=3",
+    "products": [
+      {"name":"Widget A","price":19.99,"image":"https://picsum.photos/200?1"},
+      {"name":"Widget B","price":29.99,"image":"https://picsum.photos/200?2"},
+      {"name":"Widget C","price":9.99,"image":"https://picsum.photos/200?3"}
+    ],
+    "buttonText": "Add to Cart"
+  }'></snap-let>
+</body>
+</html>
