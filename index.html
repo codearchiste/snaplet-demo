@@ -2,23 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Snaplet Demo</title>
-  <script type="module" src="https://snaplet-engine.pages.dev/snaplet-loader.js?v=3"></script>
+  <title>Snaplet Product Grid Demo</title>
+  <script type="module" src="https://codearchiste.github.io/snaplet/snaplet-loader.js"></script>
 </head>
 <body>
-  <h1>Snaplet Product Grid Demo</h1>
-
-  <snap-let data-config='{
-    "name": "product-grid",
-    "entry": "https://snaplet-engine.pages.dev/components/product-grid/script.js?v=3",
-    "css": "https://snaplet-engine.pages.dev/components/product-grid/style.css?v=3",
-    "html": "https://snaplet-engine.pages.dev/components/product-grid/template.html?v=3",
-    "products": [
-      {"name":"Widget A","price":19.99,"image":"https://picsum.photos/200?1"},
-      {"name":"Widget B","price":29.99,"image":"https://picsum.photos/200?2"},
-      {"name":"Widget C","price":9.99,"image":"https://picsum.photos/200?3"}
-    ],
-    "buttonText": "Add to Cart"
-  }'></snap-let>
+  <snap-let>
+    <script type="application/json">
+      {
+        "name": "product-grid",
+        "entry": "https://codearchiste.github.io/product-grid/script.js",
+        "css": "https://codearchiste.github.io/product-grid/style.css",
+        "html": "https://codearchiste.github.io/product-grid/template.html",
+        "products": [
+          {"name":"Widget A","price":19.99,"image":"https://picsum.photos/200?1"},
+          {"name":"Widget B","price":29.99,"image":"https://picsum.photos/200?2"},
+          {"name":"Widget C","price":9.99,"image":"https://picsum.photos/200?3"}
+        ],
+        "buttonText": "Add to Cart"
+      }
+    </script>
+  </snap-let>
 </body>
 </html>
