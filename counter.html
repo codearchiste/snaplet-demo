@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snaplet Counter Demo</title>
+  <script src="https://codearchiste.github.io/snaplet/snaplet-loader.js?v=3.4"></script>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    snap-let {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <snap-let>
+    <script type="application/json">
+    {
+      "name": "counter",
+      "entry": "https://codearchiste.github.io/snaplet/counter/script.js",
+      "css": "https://codearchiste.github.io/snaplet/counter/style.css",
+      "label": "Clicks: ",
+      "buttonText": "Add Click"
+    }
+    </script>
+  </snap-let>
+
+</body>
+</html>
