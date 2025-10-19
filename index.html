@@ -3,48 +3,118 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Snaplet Demo UI</title>
+  <title>Snaplet Developer Demo</title>
   <script type="module" src="https://codearchiste.github.io/snaplet/snaplet-loader.js"></script>
-  <!--
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://codearchie.github.io; style-src 'self' 'unsafe-inline';">
--->
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: sans-serif;
-      background: #f9f9f9;
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6f8;
+      color: #333;
+      line-height: 1.5;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      font-weight: 600;
+      margin: 40px 0 20px;
+      color: #111;
     }
 
+    /* Snaplet grid */
     .demo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      gap: 25px;
+      padding: 0 20px 50px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
+    /* Snaplet card styles */
     snap-let {
       display: block;
-      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
       background: #fff;
-      padding: 15px;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    snap-let:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Snaplet shadow DOM inner container styling */
+    snap-let::part(container) {
+      padding: 16px;
+    }
+
+    /* Snaplet headers for developer info */
+    .snaplet-header {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Code-style info panel */
+    .snaplet-meta {
+      font-family: monospace;
+      font-size: 0.85rem;
+      background: #f0f0f0;
+      padding: 6px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      overflow-x: auto;
+      color: #333;
+    }
+
+    /* Buttons inside snaplets */
+    snap-let button {
+      background-color: #0077ff;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+
+    snap-let button:hover {
+      background-color: #005fcc;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .demo-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <h1>Snaplet Developer Demo</h1>
 
-  <h1>Snaplet Demo UI</h1>
   <div class="demo-grid">
 
-
-
+    <!-- Counter Snaplet -->
     <snap-let>
       <script type="application/json">
         {
@@ -57,60 +127,63 @@
       </script>
     </snap-let>
 
+    <!-- Product Grid Snaplet -->
     <snap-let>
       <script type="application/json">
-      {
-        "name": "product-grid",
-        "entry": "https://codearchiste.github.io/snaplet/product-grid/script.js",
-        "css": "https://codearchiste.github.io/snaplet/product-grid/style.css",
-        "html": "https://codearchiste.github.io/snaplet/product-grid/template.html",
-        "products": [
-          {"name":"Widget A","price":19.99,"image":"https://picsum.photos/200?1"},
-          {"name":"Widget B","price":29.99,"image":"https://picsum.photos/200?2"},
-          {"name":"Widget C","price":9.99,"image":"https://picsum.photos/200?3"}
-        ],
-        "buttonText": "Add to Cart"
-      }
-    </script>
+        {
+          "name": "product-grid",
+          "entry": "https://codearchiste.github.io/snaplet/product-grid/script.js",
+          "css": "https://codearchiste.github.io/snaplet/product-grid/style.css",
+          "html": "https://codearchiste.github.io/snaplet/product-grid/template.html",
+          "products": [
+            {"name":"Widget A","price":19.99,"image":"https://picsum.photos/200?1"},
+            {"name":"Widget B","price":29.99,"image":"https://picsum.photos/200?2"},
+            {"name":"Widget C","price":9.99,"image":"https://picsum.photos/200?3"}
+          ],
+          "buttonText": "Add to Cart"
+        }
+      </script>
     </snap-let>
 
+    <!-- Data Table Snaplet -->
     <snap-let>
       <script type="application/json">
-{
-  "name":"data-table",
-  "entry":"https://codearchiste.github.io/snaplet/data-table/script.js",
-  "data":[
-    {"Name":"Alice","Email":"alice@example.com","Score":90},
-    {"Name":"Bob","Email":"bob@example.com","Score":85},
-    {"Name":"Charlie","Email":"charlie@example.com","Score":92}
-  ]
-}
-</script>
+        {
+          "name":"data-table",
+          "entry":"https://codearchiste.github.io/snaplet/data-table/script.js",
+          "data":[
+            {"Name":"Alice","Email":"alice@example.com","Score":90},
+            {"Name":"Bob","Email":"bob@example.com","Score":85},
+            {"Name":"Charlie","Email":"charlie@example.com","Score":92}
+          ]
+        }
+      </script>
     </snap-let>
 
+    <!-- Countdown Snaplet -->
     <snap-let>
       <script type="application/json">
-{
-  "name":"countdown",
-  "entry":"https://codearchiste.github.io/snaplet/countdown/script.js",
-  "targetDate":"2025-12-31T23:59:59Z",
-  "label":"Countdown to New Year:"
-}
-</script>
+        {
+          "name":"countdown",
+          "entry":"https://codearchiste.github.io/snaplet/countdown/script.js",
+          "targetDate":"2025-12-31T23:59:59Z",
+          "label":"Countdown to New Year:"
+        }
+      </script>
     </snap-let>
 
+    <!-- Color Box Snaplet -->
     <snap-let>
       <script type="application/json">
-{
-  "name":"color-box",
-  "entry":"https://codearchiste.github.io/snaplet/color-box/script.js",
-  "label":"Click to Change Color"
-}
-</script>
+        {
+          "name":"color-box",
+          "entry":"https://codearchiste.github.io/snaplet/color-box/script.js",
+          "label":"Click to Change Color"
+        }
+      </script>
     </snap-let>
 
   </div>
-  <script type="module" src="https://codearchiste.github.io/snaplet/snaplet-loader.js"></script>
 
 </body>
 
